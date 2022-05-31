@@ -1,28 +1,41 @@
+const randomColor = () => {
+    let result = [];
+    let numLet = "1234567890ABCDEF";
+    for (let i =0; i < 6; i++) {
+        result.push(numLet[Math.floor(Math.random() * numLet.length)])
+    }
+    return result.join("")
+}
+
+console.log(randomColor());
+
 const body = document.querySelector("body");
 
 body.style.display = "flex"
 body.style.flexDirection = "column"
 body.style.alignItems = "center"
-body.style.backgroundColor = "#6ED4C5"
+body.style.backgroundColor = `#${randomColor()}`
 
 const title = document.querySelector("h1");
 
 title.style.fontSize = "120px"
+title.style.circleType = "30px"
+title.style.color = `#${randomColor()}`
 
 const label = document.querySelector("label");
 
 label.style.alignSelf = "center"
 label.style.fontSize = "100px"
+label.style.color = `#${randomColor()}`
 label.style.height = "30vh"
-label.style.color = "red";
 
 const button = document.querySelector("button");
 
 button.style.width = "15rem"
 button.style.height = "7rem"
 button.style.fontSize = "70px"
-button.style.backgroundColor = "blue"
-button.style.color = "white"
+button.style.backgroundColor = `#${randomColor()}`
+button.style.color = `#${randomColor()}`
 button.style.border = "none"
 button.style.borderRadius = "40px"
 
@@ -38,3 +51,10 @@ const randomPasswordOne = () => {
 
 console.log(randomPasswordOne());
 
+const randomColors = () => {
+    body.style.backgroundColor = `#${randomColor()}`
+    title.style.color = `#${randomColor()}`
+    label.style.color = `#${randomColor()}`
+    button.style.backgroundColor = `#${randomColor()}`
+    button.style.color = `#${randomColor()}`
+}
